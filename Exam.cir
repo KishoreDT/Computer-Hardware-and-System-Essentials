@@ -1,0 +1,23 @@
+* C:\POE\Exam.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue May 17 15:12:06 2022
+
+
+
+** Analysis setup **
+.tran 0ns 5ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Exam.net"
+.INC "Exam.als"
+
+
+.probe
+
+
+.END

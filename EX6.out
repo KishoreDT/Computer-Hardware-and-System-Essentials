@@ -1,0 +1,181 @@
+
+**** 05/17/22 10:21:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX6.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue May 17 10:21:16 2022
+
+
+
+** Analysis setup **
+.tran 0ns 5ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "EX6.net"
+
+**** INCLUDING EX6.net ****
+* Schematics Netlist *
+
+
+
+D_D4         0 V1 D1N4002 
+D_D3         0 Vin D1N4002 
+D_D1         Vin Vout D1N4002 
+R_R1         0 Vout  1k  
+D_D2         V1 Vout D1N4002 
+V_V1         Vin V1 DC 0 AC 0
++SIN 0 5V 1k 0 0 0
+
+**** RESUMING EX6.cir ****
+.INC "EX6.als"
+
+
+
+**** INCLUDING EX6.als ****
+* Schematics Aliases *
+
+.ALIASES
+D_D4            D4(1=0 2=V1 )
+D_D3            D3(1=0 2=Vin )
+D_D1            D1(1=Vin 2=Vout )
+R_R1            R1(1=0 2=Vout )
+D_D2            D2(1=V1 2=Vout )
+V_V1            V1(+=Vin -=V1 )
+_    _(V1=V1)
+_    _(Vin=Vin)
+_    _(Vout=Vout)
+.ENDALIASES
+
+
+**** RESUMING EX6.cir ****
+.probe
+
+
+.END
+
+**** 05/17/22 10:21:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX6.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         
+          IS   14.110000E-09 
+           N    1.984        
+         ISR  100.000000E-12 
+         IKF   94.81         
+          BV  100.1          
+         IBV   10            
+          RS     .03389      
+          TT    4.761000E-06 
+         CJO   51.170000E-12 
+          VJ     .3905       
+           M     .2762       
+
+
+**** 05/17/22 10:21:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX6.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V1) 283.0E-21  (  Vin) 283.0E-21  ( Vout)-61.46E-21  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/17/22 10:21:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX6.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D4        D_D3        D_D1        D_D2      
+MODEL        D1N4002     D1N4002     D1N4002     D1N4002   
+ID           0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+VD          -2.83E-19   -2.83E-19    3.44E-19    3.44E-19 
+REQ          3.61E+06    3.61E+06    3.61E+06    3.61E+06 
+CAP          5.25E-11    5.25E-11    5.25E-11    5.25E-11 
+**** 05/17/22 10:21:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX6.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V1) 283.0E-21  (  Vin) 283.0E-21  ( Vout)-61.46E-21  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

@@ -1,0 +1,146 @@
+
+**** 05/16/22 21:33:35 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX8.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Mon May 16 11:48:20 2022
+
+
+
+** Analysis setup **
+.tran 0ns 5ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "EX8.net"
+
+**** INCLUDING EX8.net ****
+* Schematics Netlist *
+
+
+
+E_U1         Vout 0 VALUE {LIMIT(V($N_0001,Vin)*1E6,-15V,+15V)}
+R_R2         $N_0001 Vout  1k  
+R_R1         0 $N_0001  1k  
+V_V1         Vin 0 DC 0 AC 0
++SIN 0 5v 1k 0 0 0
+
+**** RESUMING EX8.cir ****
+.INC "EX8.als"
+
+
+
+**** INCLUDING EX8.als ****
+* Schematics Aliases *
+
+.ALIASES
+E_U1            U1(OUT=Vout +=$N_0001 -=Vin )
+R_R2            R2(1=$N_0001 2=Vout )
+R_R1            R1(1=0 2=$N_0001 )
+V_V1            V1(+=Vin -=0 )
+_    _(Vin=Vin)
+_    _(Vout=Vout)
+.ENDALIASES
+
+
+**** RESUMING EX8.cir ****
+.probe
+
+
+.END
+
+**** 05/16/22 21:33:35 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX8.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  Vin)    0.0000  ( Vout)    0.0000  ($N_0001)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/16/22 21:33:35 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX8.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E_U1      
+V-SOURCE     0.000E+00
+I-SOURCE     0.000E+00
+**** 05/16/22 21:33:35 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX8.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  Vin)    0.0000  ( Vout)    0.0000  ($N_0001)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

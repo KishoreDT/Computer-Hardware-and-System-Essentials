@@ -1,0 +1,133 @@
+
+**** 05/16/22 12:14:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Mon May 16 12:14:45 2022
+
+
+
+** Analysis setup **
+.tran 0ns 5ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "EX1.net"
+
+**** INCLUDING EX1.net ****
+* Schematics Netlist *
+
+
+
+R_R1         $N_0002 $N_0001  2  
+V_V1         $N_0002 0 10V
+R_R2         $N_0001 0  3  
+
+**** RESUMING EX1.cir ****
+.INC "EX1.als"
+
+
+
+**** INCLUDING EX1.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R1            R1(1=$N_0002 2=$N_0001 )
+V_V1            V1(+=$N_0002 -=0 )
+R_R2            R2(1=$N_0001 2=0 )
+.ENDALIASES
+
+
+**** RESUMING EX1.cir ****
+.probe
+
+
+.END
+
+**** 05/16/22 12:14:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    6.0000                   ($N_0002)   10.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.000E+00
+
+    TOTAL POWER DISSIPATION   2.00E+01  WATTS
+
+
+**** 05/16/22 12:14:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+**** 05/16/22 12:14:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\POE\EX1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    6.0000                   ($N_0002)   10.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.000E+00
+
+    TOTAL POWER DISSIPATION   2.00E+01  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

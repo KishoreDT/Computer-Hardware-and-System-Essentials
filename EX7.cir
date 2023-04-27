@@ -1,0 +1,23 @@
+* C:\POE\EX7.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Mon May 16 11:42:38 2022
+
+
+
+** Analysis setup **
+.tran 0ns 5ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "EX7.net"
+.INC "EX7.als"
+
+
+.probe
+
+
+.END
